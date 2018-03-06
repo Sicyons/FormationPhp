@@ -1,7 +1,7 @@
 <?php
 include "includes/header.php";
 
-echo "<h2>Ceci est les corps de mon index.php</h2>";
+echo "<h2>Ceci est le corps de mon index.php</h2>";
 
 if (isset($_GET['page']))
     $page = $_GET['page'] != "" ? $_GET["page"] : "accueil";
@@ -11,6 +11,6 @@ else
 $file = "./includes/" . $page . ".inc.php";
 $files = glob("./includes/*.inc.php");
 
-if (in_array($file, $files)) include $file;
+include in_array($file, $files) ? $file : "./includes/accueil.inc.php";
 
 include "includes/footer.php";
