@@ -1,7 +1,7 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Deniau
- * Date: 06/03/2018
- * Time: 10:44
- */
+<header>
+    <nav>
+        <li><a href="index.php?page=accueil">Accueil</a></li>
+        <li><a href="index.php?page=inscription">Inscription</a></li>
+        <li><a href="index.php?page=inscription">Inscription</a></li>
+    </nav>
+</header>
