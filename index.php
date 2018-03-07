@@ -1,16 +1,37 @@
-<?php
-include "includes/header.php";
+<!DOCTYPE html>
+<html lang="fr-FR">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Auxiblog</title>
+        <link rel="stylesheet" href="assets/css/styles.css"/>
+    </head>
+    <body>
+        <div id="container">
+            <?php
+            include "includes/header.php";
+            ?>
 
-echo "<h2>Ceci est le corps de mon index.php</h2>";
+            <main>
+                <?php
+                $file = "./includes/accueil.inc.php";
+                if (isset($_GET['page'])) {
+                    $page = $_GET['page'] != "" ? $_GET["page"] : "accueil";
 
-if (isset($_GET['page']))
-    $page = $_GET['page'] != "" ? $_GET["page"] : "accueil";
-else
-    $page = "accueil";
+                    $file = "./includes/" . $page . ".inc.php";
 
-$file = "./includes/" . $page . ".inc.php";
-$files = glob("./includes/*.inc.php");
+                    $files = glob("./includes/*.inc.php");
+                    if (!in_array($file, $files)) $file = "./includes/accueil.inc.php";
+                }
 
-include in_array($file, $files) ? $file : "./includes/accueil.inc.php";
+                include $file;
+                ?>
+            </main>
 
-include "includes/footer.php";
+            <aside></aside>
+
+            <?php
+            include 'includes/footer.php';
+            ?>
+        </div>
+    </body>
+</html>
