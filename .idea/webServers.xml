@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="caf91c4b-4636-40ec-a1cb-36fc6bab08e5" name="Auxitec Blog" url="http://localhost/Auxitec2">
+        <fileTransfer port="0" mountedRoot="C:\wamp64\www\Auxitec2" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>
