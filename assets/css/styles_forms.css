@@ -1,0 +1,45 @@
+#FormValidation {
+    margin: 5px auto 5px auto;
+    width: 170px;
+}
+
+#ErrorTitle {
+    display: inline-block;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.btnForm {
+    font-size: 14px;
+    font-weight: bold;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.btnDelete {
+    color: darkred;
+    margin-right: 2px;
+}
+
+.ErrorSection {
+    background: #ffbbbb;
+    border: 1px solid red;
+    border-radius: 5px;
+    color: darkred;
+    margin: 1px auto 15px auto;
+    padding: 5px 5px 10px 5px;
+    text-align: center;
+    width: 300px;
+}
+
+.btnValidate {
+    color: darkgreen;
+    margin-left: 2px;
+}
+
+form label {
+    float: left;
+    width: 100px;
+    text-align: right;
+    padding-right: 5px;
+}
