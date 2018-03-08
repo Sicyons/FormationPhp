@@ -37,14 +37,22 @@ if (isset($_POST['frmInscription'])) {
         $sql = "INSERT INTO T_Users (Id_users, usenom, useprenom, usemail, usepassword, id_groupes) VALUES (NULL, '$nom', '$prenom', '$mail', '$mdp', 1)";
 
         if ($requete->insert($sql)) {
+            $lastId = $requete->getLastId();
+            $lastId = hash('sha256', $lastId);
+
+            $messageMail = "<h1>Confirmation compte</h1>";
+            $messageMail.="<p>Pour confirmer votre compte, cliquez ici S.V.P.</p>";
+            $messageMail.="<div><a href='http://localhost/auxitec2/index.php?page=validationInscription&mail=$mail&id=$lastId'>Validation mail</a></div>";
+            ini_set('smtp_port', 1025);
+            mail($mail, 'Confirmation compte', $messageMail);
+
             $messageValidation = "<div class='Section'>";
             $messageValidation .= "<div id='SectionTitle'>OK</div>";
-            $messageValidation .= "<div>" . $nom . " " . $prenom . " a bien été inscrit</div>";
+            $messageValidation .= "<div>" . $nom . " " . $prenom . " a bien été enregistré et nécessite une validation</div>";
             $messageValidation .= "</div>";
 
             echo $messageValidation;
-        }
-        else {
+        } else {
             Log::logWrite("Erreur inscription [" . $sql . "]");
 
             $messageErreurs = "<div class='ErrorSection'>";

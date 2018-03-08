@@ -35,4 +35,11 @@ class Requetes
     function select ($sql){
         return $this->Db->query($sql);
     }
+    function update ($sql){
+        return $this->Db->exec($sql);
+    }
+
+    function getLastId(){
+        return $this->Db->lastInsertId();
+    }
 }

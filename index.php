@@ -2,9 +2,6 @@
 include "./functions/classAutoLoader.php";
 
 spl_autoload_register('classAutoLoader');
-
-ini_set('smtp_port', 1025);
-mail('aidenam@free.fr', 'Weed', 'Test de message');
 ?>
 <!DOCTYPE html>
 <html lang="fr-FR">
