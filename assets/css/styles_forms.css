@@ -3,12 +3,6 @@
     width: 170px;
 }
 
-#ErrorTitle {
-    display: inline-block;
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
 .btnForm {
     font-size: 14px;
     font-weight: bold;
@@ -30,6 +24,26 @@
     padding: 5px 5px 10px 5px;
     text-align: center;
     width: 300px;
+}
+#ErrorTitle {
+    display: inline-block;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.Section {
+    background: #bbbbff;
+    border: 1px solid blue;
+    border-radius: 5px;
+    color: darkblue;
+    margin: 1px auto 15px auto;
+    padding: 5px 5px 10px 5px;
+    text-align: center;
+    width: 300px;
+}
+#SectionTitle {
+    display: inline-block;
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
 .btnValidate {

@@ -16,7 +16,7 @@ class Requetes
     function __construct()
     {
         try {
-            $this->Db = new PDO($this->dsn, $this->$this->user, $this->password);
+            $this->Db = new PDO($this->dsn, $this->user, $this->password);
             $this->Db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
         } catch (PDOException $e) {
             Log::logWrite($e->getMessage());

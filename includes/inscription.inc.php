@@ -30,7 +30,32 @@ if (isset($_POST['frmInscription'])) {
 
         include "frmInscription.inc.php";
     } else {
-        // insert in database
+        $requete = new Requetes();
+        $mdp = sha1($mdp);
+        $nom = strtoupper($nom);
+
+        $sql = "INSERT INTO T_Users (Id_users, usenom, useprenom, usemail, usepassword, id_groupes) VALUES (NULL, '$nom', '$prenom', '$mail', '$mdp', 1)";
+
+        if ($requete->insert($sql)) {
+            $messageValidation = "<div class='Section'>";
+            $messageValidation .= "<div id='SectionTitle'>OK</div>";
+            $messageValidation .= "<div>" . $nom . " " . $prenom . " a bien été inscrit</div>";
+            $messageValidation .= "</div>";
+
+            echo $messageValidation;
+        }
+        else {
+            Log::logWrite("Erreur inscription [" . $sql . "]");
+
+            $messageErreurs = "<div class='ErrorSection'>";
+            $messageErreurs .= "<div id='ErrorTitle'>ERREUR !</div>";
+            $messageErreurs .= "<div>" . $nom . " " . $prenom . " n'a pas été inscrit</div>";
+            $messageErreurs .= "</div>";
+
+            echo $messageErreurs;
+        }
+
+        include "frmInscription.inc.php";
     }
 } else {
     include "frmInscription.inc.php";
