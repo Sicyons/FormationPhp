@@ -45,6 +45,21 @@
     font-size: 20px;
     margin-bottom: 10px;
 }
+.ValidationSection {
+    background: #bbffbb;
+    border: 1px solid green;
+    border-radius: 5px;
+    color: darkgreen;
+    margin: 1px auto 15px auto;
+    padding: 5px 5px 10px 5px;
+    text-align: center;
+    width: 300px;
+}
+#ValidationTitle {
+    display: inline-block;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
 
 .btnValidate {
     color: darkgreen;
